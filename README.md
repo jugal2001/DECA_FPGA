@@ -1,2 +1,2 @@
 # deca_fpga
-#deca sample projects
+# random programs
