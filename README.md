@@ -1,2 +1,2 @@
 # deca_fpga
-# random programs
+# random vhdl programs
