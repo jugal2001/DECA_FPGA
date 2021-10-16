@@ -30,7 +30,7 @@ signal state : state_type := IDLE;
 signal r_LED : std_logic_vector(1 downto 0) := "11";
 signal byte	 : std_logic_vector(15 downto 0) := "0010000001011111";
 signal delay : natural range 0 to 20000000;
-signal control : std_logic_vector(1 downto 0) := "00";
+
 begin 
 
 SPI_MASTER: entity work.SPI_MASTER 
@@ -48,16 +48,6 @@ SPI_MASTER: entity work.SPI_MASTER
 	SCLK => G_SENSOR_SCLK
 	);
 	
-LED_DRIVER: entity LED_DRIVER is 
-	port map
-	(
-		LED 	=> LED,	
-		SW		=>		,
-		byte	=> rx_byte,
-		i_clock => MAX10_CLK1_50
-	);
-end LED_DRIVER;
-
 spi_fsm: process (MAX10_CLK1_50)
 	begin 
 	--MAX10_CLK1_50 <= not MAX10_CLK1_50 after 10 ns;
